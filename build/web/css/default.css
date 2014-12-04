@@ -1,0 +1,60 @@
+
+   body {
+   background: #999;
+   background-image: url(images/food.png);
+   /*padding: 20px 40px;*/
+   padding-left: 20%;
+   padding-right: 20%;
+   background-attachment: fixed;
+   }
+
+.slideshow {
+  position: relative;   
+  min-height: 220px; /* This part sucks */
+  clear: both;
+  margin: 35px 0 25px;
+}
+.slide {
+  float: left;
+   
+}
+.slide label {
+    background: #eee; 
+    padding: 3px 7px;
+    border: 1px solid #CCC;
+    margin-right: 4px;
+    position: relative;
+    left: 1px;
+    top: 280px;
+    -webkit-transition: background-color .17s linear;
+       -moz-transition: background-color .17s linear;
+            transition: background-color .17s linear;
+}
+.slide [type=radio] {
+  display: none;   
+}
+.content {
+  position: absolute;
+  top: -1px;
+  left: -400px;
+  background: white;
+  width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc; 
+  opacity: 0;
+  height: 100%;
+  -webkit-transition: all .6s linear;
+     -moz-transition: all .6s linear;
+          transition: all .6s linear;
+}
+[type=radio]:checked ~ label {
+  background: white;
+  border-bottom: 1px solid white;
+  z-index: 2;
+}
+[type=radio]:checked ~ label ~ .content {
+  z-index: 1;
+  opacity: 1;
+  left: 0;
+}
+    
